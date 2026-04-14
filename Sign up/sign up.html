@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up page</title>
+    <style>
+        :root {
+            --primary: #fefae0;
+            --secondary: #606c38;
+            --accent: #bc6c25;
+            --text-main: #283618;
+            --focus: var(--accent)
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--secondary)
+        }
+
+        body {
+            min-width: 100vw;
+            min-height: 100vh;
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            color: var(--text-main)
+        }
+
+
+        button:focus-visible,
+        input:focus-visible,
+        a:focus-visible {
+            outline: 3px solid var(--focus);
+            outline-offset: 3px;
+            border-radius: 12px;
+        }
+
+        .signup-form {
+            width: 80vw;
+            height: auto;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 30px;
+        }
+
+        .heading2 {
+            font-weight: 500;
+            text-align: center;
+            font-size: 4rem
+        }
+
+        .signup-label {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .signup-input {
+            width: 100%;
+            height: 2rem;
+            font-size: 1.4rem;
+        }
+
+        .btn-submit {
+            background-color: var(--accent);
+            margin: 0 auto;
+            color: var(--primary);
+            padding: .5rem 1rem;
+            border-radius: 2rem;
+            border: 1px solid var(--accent);
+            transition: ease 0.3s;
+
+
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary);
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .btn-submit:active {
+            background-color: var(--secondary);
+            color: var(--primary);
+            border-color: var(--secondary);
+            transform: scale(1.2)
+        }
+
+        .btn-submit-div {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .already-have {
+            color: var(--text-main);
+            font-size: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .already-have>a {
+            color: blue;
+        }
+
+        .already-have-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .brand-links>a {
+            text-decoration: none;
+            color: white;
+            background-color: var(--accent);
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 1.0rem;
+            padding: 0.2rem;
+            border: 1px solid var(--accent);
+
+        }
+
+        .brand-links>a:hover {
+            color: var(--accent);
+            background-color: white;
+            border-color: var(--accent);
+
+        }
+
+        @media (min-width: 501px) {
+            .signup-form {
+                width: 28rem;
+            }
+        }
+
+        @media(prefers-color-scheme: dark) {
+            :root {
+                --primary: #283618;
+                --secondary: #fefae0;
+                --text-main: black;
+                --accent: #606c38;
+                --focus: #fefae0;
+                /* --primary: #fefae0;
+            --secondary: #606c38;
+            --accent: #bc6c25;
+            --text-main: #283618; */
+            }
+
+            body {
+                color: var(--text-main);
+            }
+
+            .signup-input {
+                background-color: rgba(27, 16, 16, 0.5);
+                color: var(--secondary);
+                border-color: none;
+            }
+
+            .signup-form {
+                background-color: var(--accent);
+            }
+
+            .btn-submit {
+                background-color: #bc6c25;
+                color: white;
+            }
+
+            .btn-submit:hover {
+                background-color: white;
+                color: #bc6c25;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+
+<body>
+    <article class="signup-form">
+        <h2 class="heading2">Sign up</h2>
+        <form action="">
+            <div class="input-div">
+                <label for="fname" class="signup-label">Firstname:</label>
+                <input type="text" id="fname" class="signup-input">
+            </div>
+            <div class="input-div">
+                <label for="lname" class="signup-label">Lastname:</label>
+                <input type="text" id="lname" class="signup-input">
+            </div>
+            <div class="input-div">
+                <label for="email" class="signup-label">Email:</label>
+                <input type="email" id="email" class="signup-input">
+            </div>
+
+        </form>
+        <div class="btn-submit-div">
+            <button class="btn-submit">Submit</button>
+        </div>
+        <div class="already-have-div">
+            <p class="already-have">Already have an account? <a href="">Sign in</a></p>
+            <p class="already-have">or use</p>
+            <fieldset class="brand-links">
+                <legend>Sign up with</legend>
+                <a href="#" class="fa-brands fa-google" aria-label="Google"></a>
+                <a href="#" class="fa-brands fa-instagram" aria-label="instagram"></a>
+                <a href="#" class="fa-brands fa-twitter" aria-label="twitter"></a>
+            </fieldset>
+
+        </div>
+
+    </article>
+
+    <script>
+        const fname = document.getElementById("fname");
+        const lname = document.getElementById("lname");
+        const email = document.getElementById("email");
+        const submit = document.querySelector(".btn-submit");
+
+        submit.addEventListener("click", (e) => {
+            alert(`
+            Form submitted
+            Firstname: ${fname.value}
+            Lastname: ${lname.value}
+            email: ${email.value}
+            `)
+
+            fname.value = "";
+            lname.value = "";
+            email.value = "";
+        });
+
+    </script>
+</body>
+
+</html>
