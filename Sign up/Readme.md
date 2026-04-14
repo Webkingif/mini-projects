@@ -50,7 +50,8 @@ This project is a responsive and accessible sign-up page built with a strong foc
 
 ## 🖼️ Screenshots
 
-_Add your screenshots here_
+<img src="Screenshots/one.png">
+<img src="Screenshots/two.png">
 
 
 ---
